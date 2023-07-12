@@ -21,6 +21,6 @@
 
   if(isset($_POST["logout"])) {
     session_destroy();
-    header("Location: sessions.php");
+    header("Location: login.php");
   }
 ?>
