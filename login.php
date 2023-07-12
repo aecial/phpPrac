@@ -31,6 +31,7 @@
       if(password_verify($password, $row["password"])) {
         $_SESSION["username"] = $_POST["username"];
         $_SESSION["password"] = $_POST["password"];
+        $_SESSION["role"] = $row["role_id"];
         header("Location: home.php");
       }
     }

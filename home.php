@@ -9,6 +9,14 @@
   <title>Document</title>
 </head>
 <body>
+  <?php
+    if($_SESSION["role"] == 1) {
+      include("userheader.html");
+    }
+    else {
+      include("manager.html");
+    }
+  ?>
   <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga veniam molestiae distinctio, tenetur recusandae illo voluptate ea quidem sunt cumque quia debitis aspernatur dicta neque rerum alias voluptas repellat. Ratione!</h1>
   <form action="home.php" method="post">
     <button type="submit" name="logout">Log Out</button>
