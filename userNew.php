@@ -14,9 +14,8 @@
   <?php
 
     if(isset($_SESSION['id'])) {
-      if ($_SESSION['id']  == 5) {
-         echo "You are logged in as user 1";
-         $sql = "SELECT * FROM users";
+         echo "You are logged in as user".$_SESSION['id'];
+         $sql = "SELECT * FROM users where id=".$_SESSION['id'].";";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
       while($row = mysqli_fetch_assoc($result)) {
@@ -36,7 +35,7 @@
         }
       }
     }
-      }
+      
       echo "<form action='usersUpload.php' method='post' enctype='multipart/form-data'>
       <input type='file' name='file' id='myFile'>
       <button type='submit' name='submit'>Upload</button>
