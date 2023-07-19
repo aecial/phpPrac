@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(isset($_POST['login'])) {
-    $_SESSION['id'] = 6;
+    $_SESSION['id'] = 1;
     header("Location: userNew.php");
   }
 ?>

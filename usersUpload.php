@@ -22,8 +22,10 @@ if(isset($_POST["submit"])) {
         $fileNameNew = "profile".$_SESSION['id'].".".$fileActualExt;
         $fileDestination = 'uploads/'.$fileNameNew;
         move_uploaded_file($fileTmpName, $fileDestination);
-        $sql = "UPDATE profileImg SET status=0 where userid='{$_SESSION['id']}';";
+        $sql = "UPDATE profileimg SET status=0 where userid='{$_SESSION['id']}';";
         $result = mysqli_query($conn, $sql);
+        $sqlLoc = "UPDATE profileimg SET img_location = '{$fileDestination}' WHERE userid='{$_SESSION['id']}';";
+        $resultLoc = mysqli_query($conn, $sqlLoc);
         header("Location: userNew.php?uploadSuccess");
       }
       else {
