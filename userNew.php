@@ -14,7 +14,7 @@
   <?php
 
     if(isset($_SESSION['id'])) {
-         echo "You are logged in as user".$_SESSION['id'];
+         echo "You are logged in as user ".$_SESSION['id'];
          $sql = "SELECT * FROM users where id=".$_SESSION['id'].";";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
